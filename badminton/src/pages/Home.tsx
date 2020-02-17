@@ -2,8 +2,8 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from 
 import React from 'react';
 import { IonGrid, IonRow, IonCol} from '@ionic/react';
 import './Home.css';
-import { Calendar } from '@ionic-native/calendar/ngx';
-constructor(private calendar: Calendar) { };
+// import { Calendar } from '@ionic-native/calendar/ngx';
+// constructor(private calendar: Calendar) { };
 
 
 const Home: React.FC = () => {
@@ -36,9 +36,9 @@ const Home: React.FC = () => {
     </IonPage>
   );
 };
-this.calendar.createCalendar('MyCalendar').then(
-  (msg) => { console.log(msg); },
-  (err) => { console.log(err); }
-);
+// this.calendar.createCalendar('MyCalendar').then(
+//   (msg) => { console.log(msg); },
+//   (err) => { console.log(err); }
+// );
 
 export default Home;
