@@ -1,0 +1,7 @@
+{
+  "name": "BadmintonApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
