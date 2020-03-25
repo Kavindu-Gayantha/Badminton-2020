@@ -1,36 +1,38 @@
-import 'package:flutter/cupertino.dart';
+// import 'dart:html';
+
 import 'package:flutter/material.dart';
 
-void main (){
-  runApp(MyApp());
-}
+void main(){
+  runApp(
+    new MaterialApp(
+      color:Colors.greenAccent,
+      title:'badminton-app',
+      home: new MyApp(),
 
+    )
+    );
+}
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Material(
-        color: Colors.green,
-        child:
-        new Scaffold(
-          body:
-          Column(
-            children: <Widget>[
-            Text('WELCOME',textDirection: TextDirection.ltr,), 
-            Text('to',textDirection: TextDirection.ltr),
-            Text('Badminton-2020',textDirection:TextDirection.ltr),
-            Text('My App',textDirection:TextDirection.ltr),
-            Text('designed by-Kavindu',textDirection:TextDirection.ltr),
+    return new Material(
+      color: Colors.greenAccent,
+      child:new Center( 
+        child:new Text(
+            "welcome UOK Badminton",
+            textDirection:TextDirection.ltr,
+            style:new TextStyle(
+              fontWeight:FontWeight.bold,
+              fontStyle:FontStyle.italic,
+              fontSize: 30.1,
             
-            // RaisedButton(
-            //   onPressed:null,
-            //   child:Text('GO to APP',textDirection: TextDirection.ltr,
-            //   ),
-            //   )     
-
-          ],
+            )
           )
-        )
-        
-    );
+        ),
+
+
+      );
+      
+    
   }
 }
