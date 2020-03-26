@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:badminton2020/UI/LoginScreen/login.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -16,14 +19,19 @@ class MyApp extends StatelessWidget {
           Text('UOK BADMINTON-2020'),
           Text('Attendance marking APP'),
           RaisedButton(
-            onPressed: null,
+            onPressed: (){
+              Navigator.push(context, 
+                MaterialPageRoute(builder: (context) => Login()),
+              );
+            },
             child:Text('GO to APP'),
             textTheme: ButtonTextTheme.accent,
             textColor: Colors.blue,
             ),
           
           Text('or'),
-          RaisedButton(onPressed: null,
+          RaisedButton(
+            onPressed:()=>exit(0),
             child: Text('CLOSE APP'),
             textColor: Colors.redAccent,
           )
