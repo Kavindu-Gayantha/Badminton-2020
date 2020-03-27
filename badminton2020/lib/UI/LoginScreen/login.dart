@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import './../HomeTabs/homepage.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -11,9 +12,25 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:AppBar(
-        title: Text('Login with credential'),
+        backgroundColor: Colors.green.shade400,
+        
+        title: Text('Login with credential',style: TextStyle(color: Colors.black),),
+        
+        actions: <Widget>[
+          IconButton(
+            icon:Icon(Icons.navigate_next), 
+            
+            
+            onPressed:(){
+              Navigator.push(context,
+                MaterialPageRoute(builder: (context)=>HomeScreen()),
+                );
+            }
+            )
+        ],
         ),
-        body:Container(
+        
+       body:Container(
           child:Center(
             child:Text('LOGIN') ,
             ) 
