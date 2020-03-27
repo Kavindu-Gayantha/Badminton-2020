@@ -1,4 +1,4 @@
-import 'dart:io';
+
 
 import 'package:badminton2020/UI/LoginScreen/login.dart';
 import 'package:flutter/material.dart';
@@ -31,31 +31,14 @@ class MyApp extends StatelessWidget {
           
           Text('or'),
           RaisedButton(
-            onPressed:()=>exit(0),
+            onPressed:null,
             child: Text('CLOSE APP'),
             textColor: Colors.redAccent,
           )
          
         ],
       ),
-
-
-
-
-        // child:new Text(
-        //     "welcome UOK Badminton",
-        //     textDirection:TextDirection.ltr,
-        //     style:new TextStyle(
-        //       fontWeight:FontWeight.bold,
-        //       fontStyle:FontStyle.italic,
-        //       fontSize: 30.1,
-            
-        //     )
-        //   )
-        // ),
-
-
-      );
+    );
       
     
   }
