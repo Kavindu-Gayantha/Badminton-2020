@@ -52,7 +52,7 @@ class _welcomescreenState extends State<welcomescreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar( 
-        title: Text('UOK BADMINTON'),
+        title: Text('UOK BADMINTON',textDirection: TextDirection.ltr),
       ),
       body: Center( 
         child: _widgetOption.elementAt(_selectedIndex),

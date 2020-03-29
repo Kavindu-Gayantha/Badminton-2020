@@ -14,7 +14,7 @@ class _LoginState extends State<Login> {
       appBar:AppBar(
         backgroundColor: Colors.green.shade400,
         
-        title: Text('Login with credential',style: TextStyle(color: Colors.black),),
+        title: Text('Login with credential',style: TextStyle(color: Colors.black),textDirection: TextDirection.ltr),
         
         actions: <Widget>[
           IconButton(
@@ -32,7 +32,7 @@ class _LoginState extends State<Login> {
         
        body:Container(
           child:Center(
-            child:Text('LOGIN') ,
+            child:Text('LOGIN',textDirection: TextDirection.ltr) ,
             ) 
           ),
      

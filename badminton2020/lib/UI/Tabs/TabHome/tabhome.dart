@@ -6,7 +6,7 @@ class tab_home extends StatelessWidget {
     return Container(
       child:Center(
         child: Center(
-          child: Text('tab home'),
+          child: Text('tab home',textDirection: TextDirection.ltr),
         ),
       )
       

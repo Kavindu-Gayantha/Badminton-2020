@@ -14,10 +14,10 @@ class MyApp extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         
         children: <Widget>[
-          Text('Welcome'),
-          Text('To'),
-          Text('UOK BADMINTON-2020'),
-          Text('Attendance marking APP'),
+          Text('Welcome',textDirection: TextDirection.ltr,),
+          Text('To',textDirection: TextDirection.ltr),
+          Text('UOK BADMINTON-2020',textDirection: TextDirection.ltr),
+          Text('Attendance marking APP',textDirection: TextDirection.ltr),
           RaisedButton(
             onPressed: (){
               Navigator.push(context, 
