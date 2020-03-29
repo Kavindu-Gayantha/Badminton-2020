@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "183605853421",
+    "firebase_url": "https://badminton2020.firebaseio.com",
+    "project_id": "badminton2020",
+    "storage_bucket": "badminton2020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:183605853421:android:3ae300b56ed473eddea0e4",
+        "android_client_info": {
+          "package_name": "com.example.badminton2020"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "183605853421-3ije9abhvh9t8qbuevfmlj9jtm1t4s6d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdFDa5lEPK_puQBgWpl_rkkt1HaOAa4ME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "183605853421-3ije9abhvh9t8qbuevfmlj9jtm1t4s6d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
