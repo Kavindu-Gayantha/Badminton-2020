@@ -31,7 +31,7 @@ class _LoginState extends State<Login> {
         ),
         
        body:Container(
-          child:Center(
+          child:Center(/////////
             child:Text('LOGIN',textDirection: TextDirection.ltr) ,
             ) 
           ),

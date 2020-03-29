@@ -1,22 +1,7 @@
-// import './TabHome/tabhome.dart';
-// import 'package:flutter/material.dart';
-
-// class HomeScreen extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//         title: 'welcome tabs',
-//         home: tab_home(),
-//     );
-    
-//   }
-// }
 
 // import 'package:badminton2020/UI/Tabs/TabHome/tabhome.dart';
 import 'package:flutter/material.dart';
-// import './TabHome/tabhome.dart';
-// import './TabNotification/tabnotification.dart';
-// import './TabStats/tabstats.dart';
+
 
 class welcomescreen extends StatefulWidget {
   @override
@@ -29,6 +14,7 @@ class _welcomescreenState extends State<welcomescreen> {
   static const TextStyle optionStyle=
     TextStyle(fontSize: 20,fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOption =<Widget>[
+    
     Text( 
       'Index 0:Home',
       style: optionStyle,
@@ -60,13 +46,13 @@ class _welcomescreenState extends State<welcomescreen> {
       bottomNavigationBar: BottomNavigationBar( 
         items: const<BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home),
-          title: Text('Home'),
+          title: Text('Home',textDirection: TextDirection.ltr,),
           ),
           BottomNavigationBarItem(icon: Icon(Icons.notifications),
-          title: Text('Notification'),
+          title: Text('Notification',textDirection: TextDirection.ltr,),
           ),
           BottomNavigationBarItem(icon: Icon(Icons.star),
-          title: Text('Show Stats'),
+          title: Text('Show Stats',textDirection: TextDirection.ltr,),
           )
           
         ],
