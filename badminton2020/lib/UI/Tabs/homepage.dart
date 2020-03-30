@@ -32,29 +32,29 @@ class _welcomescreenState extends State<welcomescreen> {
       style: optionStyle,
     ),
   ];
-  void _onItemTapped(int index){
-    if(index==0)
-    {
-       Navigator.of(context)
-      .push(MaterialPageRoute<Null>(builder: (BuildContext context){
-      return new tab_home();
-      }));
-    }
-    else if(index==1)
-    {
-       Navigator.of(context)
-      .push(MaterialPageRoute<Null>(builder: (BuildContext context){
-      return new tab_notification();
-      }));
-    }
-    else {
-       Navigator.of(context)
-      .push(MaterialPageRoute<Null>(builder: (BuildContext context){
-      return new tab_stats();
-      }));
-    }
+  // void _onItemTapped(int index){
+  //   if(index==0)
+  //   {
+  //      Navigator.of(context)
+  //     .push(MaterialPageRoute<Null>(builder: (BuildContext context){
+  //     return new tab_home();
+  //     }));
+  //   }
+  //   else if(index==1)
+  //   {
+  //      Navigator.of(context)
+  //     .push(MaterialPageRoute<Null>(builder: (BuildContext context){
+  //     return new tab_notification();
+  //     }));
+  //   }
+  //   else {
+  //      Navigator.of(context)
+  //     .push(MaterialPageRoute<Null>(builder: (BuildContext context){
+  //     return new tab_stats();
+  //     }));
+  //   }
    
-  }
+  // }
 
   @override
   Widget build(BuildContext context) {
