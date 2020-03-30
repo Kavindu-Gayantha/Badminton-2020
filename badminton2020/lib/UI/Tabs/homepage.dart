@@ -1,5 +1,9 @@
 
 // import 'package:badminton2020/UI/Tabs/TabHome/tabhome.dart';
+
+import 'package:badminton2020/UI/Tabs/TabHome/tabhome.dart';
+import 'package:badminton2020/UI/Tabs/TabNotification/tabnotification.dart';
+import 'package:badminton2020/UI/Tabs/TabStats/tabstats.dart';
 import 'package:flutter/material.dart';
 
 
@@ -29,9 +33,27 @@ class _welcomescreenState extends State<welcomescreen> {
     ),
   ];
   void _onItemTapped(int index){
-    setState(() {
-      _selectedIndex = index;
-    });
+    if(index==0)
+    {
+       Navigator.of(context)
+      .push(MaterialPageRoute<Null>(builder: (BuildContext context){
+      return new tab_home();
+      }));
+    }
+    else if(index==1)
+    {
+       Navigator.of(context)
+      .push(MaterialPageRoute<Null>(builder: (BuildContext context){
+      return new tab_notification();
+      }));
+    }
+    else {
+       Navigator.of(context)
+      .push(MaterialPageRoute<Null>(builder: (BuildContext context){
+      return new tab_stats();
+      }));
+    }
+   
   }
 
   @override
@@ -39,6 +61,7 @@ class _welcomescreenState extends State<welcomescreen> {
     return Scaffold(
       appBar: AppBar( 
         title: Text('UOK BADMINTON',textDirection: TextDirection.ltr),
+        backgroundColor: Colors.greenAccent.shade700,
       ),
       body: Center( 
         child: _widgetOption.elementAt(_selectedIndex),
@@ -57,20 +80,11 @@ class _welcomescreenState extends State<welcomescreen> {
           
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor:Colors.greenAccent[800],
+        selectedItemColor:Colors.greenAccent.shade700,
         onTap: _onItemTapped,
         
       ),
-      
-      // // extendBodyBehindAppBar: new IndexedStack(
-      //   index:_selectedIndex,
-      //   children: <Widget>[
-      //     new tab_home(),
-      //     new tab_notification(),
-      //     new tab_stats(),
-          
-      //   ],
-      // ),
+     
     );
   }
 }
