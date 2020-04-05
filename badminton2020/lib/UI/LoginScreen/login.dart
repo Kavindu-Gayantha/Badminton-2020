@@ -8,6 +8,11 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  String _email, _password; 
+    
+  final GlobalKey<FormState>_formKey=GlobalKey<FormState>();
+
+  var input;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,11 +35,49 @@ class _LoginState extends State<Login> {
         ],
         ),
         
-       body:Container(
-          child:Center(/////////
-            child:Text('LOGIN',textDirection: TextDirection.ltr) ,
-            ) 
-          ),
+       body:Form( 
+         //Todo:implement key
+         key: _formKey,
+         child: Center(
+           child: Column(
+            children: <Widget>[
+                //Todo: Implement fields
+                TextFormField( 
+                  validator: (input){
+                    if(input.isEmpty){
+                      return 'Please Enter Your Email';
+                    }
+                  },
+                  onSaved: (input)=> _email=input,
+                  decoration: InputDecoration(
+                    labelText: 'Email',
+                  ),
+                
+
+                ),
+                TextFormField( 
+                  validator: (input){
+                    if(input.length<6){
+                      return 'your password need 6 characters atleast';
+                    }
+                  },
+                  onSaved: (input)=> _password=input,
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                  ),
+                  obscureText: true,               
+
+                ),
+                RaisedButton( 
+                  onPressed: (){
+
+                  },
+                  child: Text('Sign in'),
+                )
+           ],
+           ),
+         ),
+       )
      
 
 
@@ -44,5 +87,15 @@ class _LoginState extends State<Login> {
       //   ),
       // ),
     );
+  }
+
+  void signIn(){
+    //Todo validate fields
+    final formState = _formKey.currentState;
+    if(formState.validate()){
+      //todo login to firebase
+
+    }
+    
   }
 }

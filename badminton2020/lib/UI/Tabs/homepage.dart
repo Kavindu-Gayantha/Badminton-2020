@@ -5,6 +5,7 @@ import 'package:badminton2020/UI/Tabs/TabHome/tabhome.dart';
 import 'package:badminton2020/UI/Tabs/TabNotification/tabnotification.dart';
 import 'package:badminton2020/UI/Tabs/TabStats/tabstats.dart';
 import 'package:flutter/material.dart';
+import './../placeholder_widget.dart';
 
 
 class welcomescreen extends StatefulWidget {
@@ -13,25 +14,31 @@ class welcomescreen extends StatefulWidget {
 }
 
 class _welcomescreenState extends State<welcomescreen> {
-
-  int _selectedIndex=0;
-  static const TextStyle optionStyle=
-    TextStyle(fontSize: 20,fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOption =<Widget>[
-    
-    Text( 
-      'Index 0:Home',
-      style: optionStyle,
-    ),
-    Text( 
-      'Index 1:Message',
-      style: optionStyle,
-    ),
-    Text( 
-      'Index 2:STATS',
-      style: optionStyle,
-    ),
+   int _currentIndex = 0;
+  final List<Widget> _children = [
+    // placeholder_widget(),
+    // placeholder_widget(),
+    // placeholder_widget(),
   ];
+
+  // int _selectedIndex=0;
+  // static const TextStyle optionStyle=
+  //   TextStyle(fontSize: 20,fontWeight: FontWeight.bold);
+  // static const List<Widget> _widgetOption =<Widget>[
+    
+  //   Text( 
+  //     'Index 0:Home',
+  //     style: optionStyle,
+  //   ),
+  //   Text( 
+  //     'Index 1:Message',
+  //     style: optionStyle,
+  //   ),
+  //   Text( 
+  //     'Index 2:STATS',
+  //     style: optionStyle,
+  //   ),
+  // ];
   // void _onItemTapped(int index){
   //   if(index==0)
   //   {
@@ -55,6 +62,11 @@ class _welcomescreenState extends State<welcomescreen> {
   //   }
    
   // }
+  void onTabTapped (int index){
+    setState(() {
+      _currentIndex=index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,10 +75,10 @@ class _welcomescreenState extends State<welcomescreen> {
         title: Text('UOK BADMINTON',textDirection: TextDirection.ltr),
         backgroundColor: Colors.greenAccent.shade700,
       ),
-      body: Center( 
-        child: _widgetOption.elementAt(_selectedIndex),
-      ),
+      
       bottomNavigationBar: BottomNavigationBar( 
+        onTap:onTabTapped,
+        currentIndex:_currentIndex,
         items: const<BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home),
           title: Text('Home',textDirection: TextDirection.ltr,),
@@ -79,9 +91,9 @@ class _welcomescreenState extends State<welcomescreen> {
           )
           
         ],
-        currentIndex: _selectedIndex,
+        // currentIndex: _selectedIndex,
         selectedItemColor:Colors.greenAccent.shade700,
-        onTap: _onItemTapped,
+       
         
       ),
      
