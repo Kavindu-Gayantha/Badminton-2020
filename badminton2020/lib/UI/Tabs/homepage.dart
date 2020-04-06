@@ -93,8 +93,8 @@ class _welcomescreenState extends State<welcomescreen> {
               
             ),
             ListTile(
-              leading: Icon(Icons.account_circle),
-              title: Text('profile'),
+              leading: Icon(Icons.people),
+              title: Text('ADMIN LOGIN'),
             ),
             ListTile(
               leading: Icon(Icons.settings),
@@ -102,7 +102,11 @@ class _welcomescreenState extends State<welcomescreen> {
             ),
             ListTile(
               leading: Icon(Icons.message),
-              title: Text('msg'),
+              title: Text('Team Message'),
+            ),
+             ListTile(
+              leading: Icon(Icons.exit_to_app),
+              title: Text('LOG OUT'),
             )
             
           ],
