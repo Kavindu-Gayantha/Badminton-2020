@@ -1,6 +1,7 @@
 
 // import 'package:badminton2020/UI/Tabs/TabHome/tabhome.dart';
 
+import 'package:badminton2020/UI/LoginScreen/login.dart';
 import 'package:badminton2020/UI/Tabs/TabHome/tabhome.dart';
 import 'package:badminton2020/UI/Tabs/TabNotification/tabnotification.dart';
 import 'package:badminton2020/UI/Tabs/TabStats/tabstats.dart';
@@ -105,6 +106,11 @@ class _welcomescreenState extends State<welcomescreen> {
             ListTile(
               leading: Icon(Icons.people),
               title: Text('ADMIN LOGIN'),
+              onTap: (){
+                Navigator.push(context,
+                MaterialPageRoute(builder: (context)=>Login())
+                );
+              },
             ),
             ListTile(
               leading: Icon(Icons.settings),
