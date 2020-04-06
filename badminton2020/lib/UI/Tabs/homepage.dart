@@ -75,6 +75,39 @@ class _welcomescreenState extends State<welcomescreen> {
         title: Text('UOK BADMINTON',textDirection: TextDirection.ltr),
         backgroundColor: Colors.greenAccent.shade700,
       ),
+      drawer: Drawer( 
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader( 
+              decoration: BoxDecoration(
+                color: Colors.greenAccent,
+                ),
+              child: Text('Login here',
+              style: TextStyle(
+                color: Colors.green.shade900,
+                fontSize: 25,
+              ),
+              
+              ),
+              
+            ),
+            ListTile(
+              leading: Icon(Icons.account_circle),
+              title: Text('profile'),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('settings'),
+            ),
+            ListTile(
+              leading: Icon(Icons.message),
+              title: Text('msg'),
+            )
+            
+          ],
+        ),
+      ),
       
       bottomNavigationBar: BottomNavigationBar( 
         onTap:onTabTapped,
