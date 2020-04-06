@@ -82,14 +82,24 @@ class _welcomescreenState extends State<welcomescreen> {
             DrawerHeader( 
               decoration: BoxDecoration(
                 color: Colors.greenAccent,
+                image: DecorationImage(
+                  image: AssetImage("images/feather-shuttle.jpg"),
+                  fit: BoxFit.cover
+                )
+                
                 ),
+                
+                
               child: Text('Login here',
               style: TextStyle(
                 color: Colors.green.shade900,
                 fontSize: 25,
               ),
+
+              
               
               ),
+             
               
             ),
             ListTile(
