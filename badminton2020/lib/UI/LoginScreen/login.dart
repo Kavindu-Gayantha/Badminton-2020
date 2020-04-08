@@ -1,4 +1,5 @@
 
+import 'package:badminton2020/UI/Tabs/TabHome/tabhome.dart';
 import 'package:badminton2020/UI/Tabs/homepage.dart';
 import 'package:flutter/material.dart';
 
@@ -73,6 +74,13 @@ class _LoginState extends State<Login> {
 
                   },
                   child: Text('Sign in'),
+                ),
+                Text('Not an Admin ?'),
+                RaisedButton( 
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder:(context)=>welcomescreen()));
+                  },
+                  child: Text('Normal login'),
                 )
            ],
            ),
