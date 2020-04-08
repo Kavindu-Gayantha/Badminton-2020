@@ -130,11 +130,16 @@ class _welcomescreenState extends State<welcomescreen> {
       ),
       
       bottomNavigationBar: BottomNavigationBar( 
+        backgroundColor: Colors.green.shade100,
         onTap:onTabTapped,
+        type: BottomNavigationBarType.shifting,
         currentIndex:_currentIndex,
         items: const<BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home),
-          title: Text('Home',textDirection: TextDirection.ltr,),
+          title: Text('Boys Team',textDirection: TextDirection.ltr,),
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.home),
+          title: Text('Girls Team',textDirection: TextDirection.ltr,),
           ),
           BottomNavigationBarItem(icon: Icon(Icons.notifications),
           title: Text('Notification',textDirection: TextDirection.ltr,),
