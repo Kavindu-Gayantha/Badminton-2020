@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class tab_stats extends StatelessWidget {
+class TabStats extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
