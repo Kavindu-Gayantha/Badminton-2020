@@ -9,132 +9,94 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  String _email, _password; 
-    
-  final GlobalKey<FormState>_formKey=GlobalKey<FormState>();
-
-  var input;
+  TextEditingController nameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar(
-        backgroundColor: Colors.green.shade400,
-        
-        title: Text('Login with credential',style: TextStyle(color: Colors.black),textDirection: TextDirection.ltr),
-        
-        actions: <Widget>[
-          IconButton(
-            icon:Icon(Icons.send), 
-            
-            
-            onPressed:(){
-              Navigator.push(context,
-                MaterialPageRoute(builder: (context)=>welcomescreen()),
-                );
-            }
-            )
-        ],
+        appBar: AppBar(
+          title: Text('Sample App'),
         ),
-        
-       body:Form( 
-         
-         //Todo:implement key
-         key: _formKey,
-         child: Center(
-           child: Column(
-            children: <Widget>[
-                //Todo: Implement fields
-                Padding(
-                  padding: EdgeInsets.fromLTRB(10,0, 10, 0) ,
-                  
-                  child:Card(
-                    color: Colors.green.shade100,
-                    
-                   child: TextFormField( 
-                    
-                    
-                    validator: (input){
-                      if(input.isEmpty){
-                        return 'Please Enter Your Email';
-                      }
-                    },
-                    onSaved: (input)=> _email=input,
+        body: Padding(
+            padding: EdgeInsets.all(10),
+            child: ListView(
+              children: <Widget>[
+                Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.all(10),
+                    child: Text(
+                      'TutorialKart',
+                      style: TextStyle(
+                          color: Colors.blue,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 30),
+                    )),
+                Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.all(10),
+                    child: Text(
+                      'Sign in',
+                      style: TextStyle(fontSize: 20),
+                    )),
+                Container(
+                  padding: EdgeInsets.all(10),
+                  child: TextField(
+                    controller: nameController,
                     decoration: InputDecoration(
-                      labelText: 'Email',
                       border: OutlineInputBorder(),
+                      labelText: 'User Name',
                     ),
-                  
-
-                  ),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.fromLTRB(10,0, 10, 0) ,
-                  
-                child: Card( 
-                  color:Colors.green.shade100,
-
-                  child:TextFormField( 
-                  validator: (input){
-                    if(input.length<6){
-                      return 'your password need 6 characters atleast';
-                    }
-                  },
-                  onSaved: (input)=> _password=input,
-                  decoration: InputDecoration(
-                    labelText: 'Password',
-                    border: OutlineInputBorder(),
-                  ),
-                  obscureText: true,               
-
-                ),
-                ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(10,5,10,5),
-                  
-                  child: RaisedButton( 
-                    color: Colors.greenAccent.shade700,
-                    shape: RoundedRectangleBorder(borderRadius:BorderRadius.all((Radius.circular(16.0)))),
-                    elevation: 15,
-                    onPressed: (){
-
-                    },
-                    child: Text('Sign in'),
+                Container(
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                  child: TextField(
+                    obscureText: true,
+                    controller: passwordController,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Password',
+                    ),
                   ),
                 ),
-                Text('Not an Admin ?'),
-                RaisedButton( 
-                  shape: RoundedRectangleBorder(borderRadius:BorderRadius.all((Radius.circular(16.0)))),
-                    color: Colors.greenAccent.shade400,
-                    elevation: 15,
+                FlatButton(
                   onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder:(context)=>welcomescreen()));
+                    //forgot password screen
                   },
-                  child: Text('Normal login'),
-                )
-           ],
-           ),
-         ),
-       )
-     
-
-
-      // child: Center(
-      //   child: Center(
-      //     child:Text('secondpage',textDirection: TextDirection.ltr,),
-      //   ),
-      // ),
-    );
-  }
-
-  void signIn(){
-    //Todo validate fields
-    final formState = _formKey.currentState;
-    if(formState.validate()){
-      //todo login to firebase
-
-    }
-    
-  }
+                  textColor: Colors.blue,
+                  child: Text('Forgot Password'),
+                ),
+                Container(
+                  height: 50,
+                    padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                    child: RaisedButton(
+                      textColor: Colors.white,
+                      color: Colors.blue,
+                      child: Text('Login'),
+                      onPressed: () {
+                        print(nameController.text);
+                        print(passwordController.text);
+                      },
+                    )),
+                Container(
+                  child: Row(
+                    children: <Widget>[
+                      Text('Does not have account?'),
+                      FlatButton(
+                        textColor: Colors.blue,
+                        child: Text(
+                          'Sign in',
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        onPressed: () {
+                          //signup screen
+                        },
+                      )
+                    ],
+                    mainAxisAlignment: MainAxisAlignment.center,
+                ))
+              ],
+            )));
+  } 
 }
