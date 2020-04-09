@@ -77,6 +77,8 @@ class _LoginState extends State<Login> {
                       textColor: Colors.white,
                       color: Colors.green,
                       child: Text('Login'),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.elliptical(16.0,13.0))),
+                      elevation: 5,
                       onPressed: () {
                         print(nameController.text);
                         print(passwordController.text);
