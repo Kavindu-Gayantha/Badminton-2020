@@ -94,6 +94,9 @@ class _LoginState extends State<Login> {
                   padding: const EdgeInsets.fromLTRB(10,5,10,5),
                   
                   child: RaisedButton( 
+                    color: Colors.greenAccent.shade700,
+                    shape: RoundedRectangleBorder(borderRadius:BorderRadius.all((Radius.circular(16.0)))),
+                    elevation: 15,
                     onPressed: (){
 
                     },
@@ -102,6 +105,9 @@ class _LoginState extends State<Login> {
                 ),
                 Text('Not an Admin ?'),
                 RaisedButton( 
+                  shape: RoundedRectangleBorder(borderRadius:BorderRadius.all((Radius.circular(16.0)))),
+                    color: Colors.greenAccent.shade400,
+                    elevation: 15,
                   onPressed: (){
                     Navigator.push(context, MaterialPageRoute(builder:(context)=>welcomescreen()));
                   },
