@@ -16,7 +16,9 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Sample App'),
+          title: Text('Login as Admin'),
+          backgroundColor: Colors.green.shade500,
+         
         ),
         body: Padding(
             padding: EdgeInsets.all(10),
@@ -26,9 +28,9 @@ class _LoginState extends State<Login> {
                     alignment: Alignment.center,
                     padding: EdgeInsets.all(10),
                     child: Text(
-                      'TutorialKart',
+                      'Team Badminton UOK',
                       style: TextStyle(
-                          color: Colors.blue,
+                          color: Colors.green.shade800,
                           fontWeight: FontWeight.w500,
                           fontSize: 30),
                     )),
@@ -36,7 +38,7 @@ class _LoginState extends State<Login> {
                     alignment: Alignment.center,
                     padding: EdgeInsets.all(10),
                     child: Text(
-                      'Sign in',
+                      'Sign in captains',
                       style: TextStyle(fontSize: 20),
                     )),
                 Container(
@@ -45,7 +47,8 @@ class _LoginState extends State<Login> {
                     controller: nameController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      labelText: 'User Name',
+                      labelText: 'Email',
+                      
                     ),
                   ),
                 ),
@@ -64,7 +67,7 @@ class _LoginState extends State<Login> {
                   onPressed: (){
                     //forgot password screen
                   },
-                  textColor: Colors.blue,
+                  textColor: Colors.lightGreen,
                   child: Text('Forgot Password'),
                 ),
                 Container(
@@ -72,21 +75,26 @@ class _LoginState extends State<Login> {
                     padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                     child: RaisedButton(
                       textColor: Colors.white,
-                      color: Colors.blue,
+                      color: Colors.green,
                       child: Text('Login'),
                       onPressed: () {
                         print(nameController.text);
                         print(passwordController.text);
+                        Navigator.push(
+                          context, MaterialPageRoute(
+                            builder: (context)=> welcomescreen()),
+                            );
                       },
-                    )),
+                    )
+                    ),
                 Container(
                   child: Row(
                     children: <Widget>[
                       Text('Does not have account?'),
                       FlatButton(
-                        textColor: Colors.blue,
+                        textColor: Colors.green.shade700,
                         child: Text(
-                          'Sign in',
+                          'Create Account',
                           style: TextStyle(fontSize: 20),
                         ),
                         onPressed: () {

@@ -42,7 +42,9 @@ class MyApp extends StatelessWidget {
             child:Text('GO to APP'),
             textTheme: ButtonTextTheme.accent,
             textColor: Colors.blue,
+            
             ),
+            
           
           Text('or'),
           RaisedButton(
