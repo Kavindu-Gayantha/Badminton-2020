@@ -37,26 +37,44 @@ class _LoginState extends State<Login> {
         ),
         
        body:Form( 
+         
          //Todo:implement key
          key: _formKey,
          child: Center(
            child: Column(
             children: <Widget>[
                 //Todo: Implement fields
-                TextFormField( 
-                  validator: (input){
-                    if(input.isEmpty){
-                      return 'Please Enter Your Email';
-                    }
-                  },
-                  onSaved: (input)=> _email=input,
-                  decoration: InputDecoration(
-                    labelText: 'Email',
-                  ),
-                
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10,0, 10, 0) ,
+                  
+                  child:Card(
+                    color: Colors.green.shade100,
+                    
+                   child: TextFormField( 
+                    
+                    
+                    validator: (input){
+                      if(input.isEmpty){
+                        return 'Please Enter Your Email';
+                      }
+                    },
+                    onSaved: (input)=> _email=input,
+                    decoration: InputDecoration(
+                      labelText: 'Email',
+                      border: OutlineInputBorder(),
+                    ),
+                  
 
+                  ),
+                  ),
                 ),
-                TextFormField( 
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10,0, 10, 0) ,
+                  
+                child: Card( 
+                  color:Colors.green.shade100,
+
+                  child:TextFormField( 
                   validator: (input){
                     if(input.length<6){
                       return 'your password need 6 characters atleast';
@@ -65,15 +83,22 @@ class _LoginState extends State<Login> {
                   onSaved: (input)=> _password=input,
                   decoration: InputDecoration(
                     labelText: 'Password',
+                    border: OutlineInputBorder(),
                   ),
                   obscureText: true,               
 
                 ),
-                RaisedButton( 
-                  onPressed: (){
+                ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(10,5,10,5),
+                  
+                  child: RaisedButton( 
+                    onPressed: (){
 
-                  },
-                  child: Text('Sign in'),
+                    },
+                    child: Text('Sign in'),
+                  ),
                 ),
                 Text('Not an Admin ?'),
                 RaisedButton( 
