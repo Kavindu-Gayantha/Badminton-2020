@@ -1,6 +1,9 @@
 
 
-import 'package:badminton2020/UI/LoginScreen/login.dart';
+// import 'dart:io';
+
+// import 'package:badminton2020/UI/LoginScreen/login.dart';
+import 'package:badminton2020/UI/Tabs/homepage.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -8,11 +11,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: 'badminton',
-      home:Container( 
-        decoration: BoxDecoration(
+      home:Scaffold( 
+        body: DecoratedBox(
+          position: DecorationPosition.background,
+          decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("images/badminton.jpg"),fit: BoxFit.fill)
+            image: AssetImage("images/badminton.jpg"),
+            fit: BoxFit.cover)
         ),
+        
       child: Scaffold(
         body:new Column( 
           
@@ -29,7 +36,7 @@ class MyApp extends StatelessWidget {
           RaisedButton(
             onPressed: (){
               Navigator.push(context, 
-                MaterialPageRoute(builder: (context) => Login()),
+                MaterialPageRoute(builder: (context) => welcomescreen()),
               );
             },
             child:Text('GO to APP'),
@@ -47,6 +54,7 @@ class MyApp extends StatelessWidget {
         ],
       ),
       ),
+    ),
     ),
     );
       

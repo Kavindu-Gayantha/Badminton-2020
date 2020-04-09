@@ -1,4 +1,6 @@
 
+//this screen is hangling all the tabs
+
 // import 'package:badminton2020/UI/Tabs/TabHome/tabhome.dart';
 
 import 'package:badminton2020/UI/LoginScreen/login.dart';
