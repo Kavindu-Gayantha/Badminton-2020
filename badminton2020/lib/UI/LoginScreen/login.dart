@@ -105,7 +105,42 @@ class _LoginState extends State<Login> {
                       )
                     ],
                     mainAxisAlignment: MainAxisAlignment.center,
-                ))
+                ),
+                ),
+                Container(
+                  child:Center(child: Text('Not an Admin?'),
+                  
+                  )
+                  
+                ),
+                 Container(
+                  child: Row(
+                    children: <Widget>[
+                      // Text('NOT AN ADMIN?'),
+                      // Text('login as just user'),
+                      RaisedButton(
+                        textColor: Colors.black87,
+                        child: Text(
+                          'User login',
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        color: Colors.green,
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(56.0))),
+                        elevation: 10,
+                        onPressed: () {
+                          //signup screen
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder:(context)=>welcomescreen(),
+                               )
+                              );
+                        },
+                      )
+                    ],
+                    mainAxisAlignment: MainAxisAlignment.center,
+                ),
+                ),
               ],
             )));
   } 
