@@ -147,6 +147,10 @@ class _welcomescreenState extends State<welcomescreen> {
 
        ],
      ),
+     floatingActionButton: FloatingActionButton(
+       onPressed: null,
+       child: Icon(Icons.add),
+       ),
     );
   }
 }
