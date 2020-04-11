@@ -1,64 +1,33 @@
+import 'package:badminton2020/UI/Tabs/contactlist/contact_list.dart';
+import 'package:badminton2020/UI/Tabs/contactlist/modal/contact.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class TabGirls extends StatelessWidget {
+
+    _buildContactList() {
+       return <ContactModal>[
+              const ContactModal(
+                  fullName: 'Lihini Hiranya'),
+              const ContactModal(
+                  fullName: 'Nadeesha Mettananda'),
+              const ContactModal(
+                  fullName: 'Sanduni Ruwanthika'),
+              const ContactModal(
+                  fullName: 'Sandaru De Silva'),
+              const ContactModal(
+                  fullName: 'Umasha Nanayakkara'),
+              const ContactModal(
+                  fullName: 'Kalani Pramodya'),
+              const ContactModal(
+                  fullName: 'Kasuni'),
+             
+            ];
+    }
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child:Center(
-        child: Center(
-          child: Text('tab girls',textDirection: TextDirection.ltr  // bottomNavigationBar: BottomNavigationBar( 
-      //   backgroundColor: Colors.green.shade100,
-      //   onTap:onTabTapped,
-      //   type: BottomNavigationBarType.shifting,
-      //   currentIndex:_currentIndex,
-      //   items: const<BottomNavigationBarItem>[
-      //     BottomNavigationBarItem(icon: Icon(Icons.home),
-      //     title: Text('Boys Team',textDirection: TextDirection.ltr,),
-      //     ),
-      //     BottomNavigationBarItem(icon: Icon(Icons.home),
-      //     title: Text('Girls Team',textDirection: TextDirection.ltr,),
-      //     ),
-      //     BottomNavigationBarItem(icon: Icon(Icons.notifications),
-      //     title: Text('Notification',textDirection: TextDirection.ltr,),
-      //     ),
-      //     BottomNavigationBarItem(icon: Icon(Icons.star),
-      //     title: Text('Show Stats',textDirection: TextDirection.ltr,),
-      //     )
+    return Scaffold(body: ContactsList(_buildContactList()));
           
-      //   ],
-      //   // currentIndex: _selectedIndex,
-      //   selectedItemColor:Colors.greenAccent.shade700,
-       
-        
-      // ),  // bottomNavigationBar: BottomNavigationBar( 
-      //   backgroundColor: Colors.green.shade100,
-      //   onTap:onTabTapped,
-      //   type: BottomNavigationBarType.shifting,
-      //   currentIndex:_currentIndex,
-      //   items: const<BottomNavigationBarItem>[
-      //     BottomNavigationBarItem(icon: Icon(Icons.home),
-      //     title: Text('Boys Team',textDirection: TextDirection.ltr,),
-      //     ),
-      //     BottomNavigationBarItem(icon: Icon(Icons.home),
-      //     title: Text('Girls Team',textDirection: TextDirection.ltr,),
-      //     ),
-      //     BottomNavigationBarItem(icon: Icon(Icons.notifications),
-      //     title: Text('Notification',textDirection: TextDirection.ltr,),
-      //     ),
-      //     BottomNavigationBarItem(icon: Icon(Icons.star),
-      //     title: Text('Show Stats',textDirection: TextDirection.ltr,),
-      //     )
-          
-      //   ],
-      //   // currentIndex: _selectedIndex,
-      //   selectedItemColor:Colors.greenAccent.shade700,
-       
-        
-      // ),),
-        ),
-      )
-      
-    ),
-    );
-  }
+      }
+    
 }
