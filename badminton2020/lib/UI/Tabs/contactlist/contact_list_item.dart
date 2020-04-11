@@ -10,7 +10,7 @@ class ContactListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
         leading: CircleAvatar(child: Text(_contactModal.fullName[0])),
-        title: Text(_contactModal.fullName),
-        subtitle: Text(_contactModal.email));
+        title: Text(_contactModal.fullName));
+        // subtitle: Text(_contactModal.email));
   }
 }

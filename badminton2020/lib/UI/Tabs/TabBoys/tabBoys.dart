@@ -9,23 +9,23 @@ class TabBoys extends StatelessWidget {
 
         return <ContactModal>[
               const ContactModal(
-                  fullName: 'Romain Hoogmoed', email: 'romain.hoogmoed@example.com'),
+                  fullName: 'Kavindu Gayantha'),
               const ContactModal(
-                  fullName: 'Emilie Olsen', email: 'emilie.olsen@example.com'),
+                  fullName: 'Kanishka Deshan'),
               const ContactModal(
-                  fullName: 'Nishant Srivastava', email: 'nishant.srivastava@example.com'),
+                  fullName: 'Madushanka Kahawa'),
               const ContactModal(
-                  fullName: 'Romain Hoogmoed', email: 'romain.hoogmoed@example.com'),
+                  fullName: 'Tharindu Bandara'),
               const ContactModal(
-                  fullName: 'Emilie Olsen', email: 'emilie.olsen@example.com'),
+                  fullName: 'Kasun Gimhana'),
               const ContactModal(
-                  fullName: 'Nishant Srivastava', email: 'nishant.srivastava@example.com'),
+                  fullName: 'Athish Rathnaweera'),
               const ContactModal(
-                  fullName: 'Romain Hoogmoed', email: 'romain.hoogmoed@example.com'),
+                  fullName: 'Bhagya Ranasinghe'),
               const ContactModal(
-                  fullName: 'Emilie Olsen', email: 'emilie.olsen@example.com'),
+                  fullName: 'Kethaka Ranasinghe'),
               const ContactModal(
-                  fullName: 'Nishant Srivastava', email: 'nishant.srivastava@example.com'),
+                  fullName: 'Nipuna Deshan'),
             ];
 
     
