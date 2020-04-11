@@ -1,17 +1,73 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class TabBoys extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child:Center(
-        child: Center(
-          child: Text('tab home',textDirection: TextDirection.ltr  // bottomNavigationBar: BottomNavigationBar( 
-     
-        ),
-      )
-      
-    ),
-    );
-  }
-}
+    
+        return Card(
+          
+          child: ListView(
+            padding: EdgeInsets.all(10.0),
+          children: <Widget>[
+            Text('one'),
+            Text('two'),
+             Text('one'),
+            Text('two'),
+             Text('one'),
+            Text('two'),
+             Text('one'),
+            Text('two'),
+             Text('one'),
+            Text('two'),
+             Text('one'),
+            Text('two'),
+             Text('one'),
+            Text('two'),
+             Text('one'),
+            Text('two'),
+             Text('one'),
+            Text('two'),
+                 Text('one'),
+            Text('two'),
+             Text('one'),
+            Text('two'),
+             Text('one'),
+            Text('two'),
+             Text('one'),
+            Text('two'),
+             Text('one'),
+            Text('two'),
+             Text('one'),
+            Text('two'),
+             Text('one'),
+            Text('two'),
+             Text('one'),
+            Text('two'),
+             Text('one'),
+            Text('two'),
+                 Text('one'),
+            Text('two'),
+             Text('one'),
+            Text('two'),
+             Text('one'),
+            Text('two'),
+             Text('one'),
+            Text('two'),
+             Text('one'),
+            Text('two'),
+             Text('one'),
+            Text('two'),
+             Text('one'),
+            Text('two'),
+             Text('one'),
+            Text('two'),
+             Text('one'),
+            Text('two'),
+            
+
+          ],
+          ),
+        );
+      }
+    }
