@@ -12,6 +12,7 @@ import 'package:badminton2020/UI/Tabs/TabNotification/tabnotification.dart';
 import 'package:badminton2020/UI/Tabs/TabStats/tabstats.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import './../drawer/settings.dart';
 // import './../placeholder_widget.dart';
 
 
@@ -39,7 +40,8 @@ class _welcomescreenState extends State<welcomescreen> {
         title: Text('UOK BADMINTON',textDirection: TextDirection.ltr),
         backgroundColor: Colors.greenAccent.shade700,
       ),
-      drawer: Drawer( 
+      drawer: 
+      Drawer( 
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
@@ -78,14 +80,23 @@ class _welcomescreenState extends State<welcomescreen> {
             ListTile(
               leading: Icon(Icons.settings),
               title: Text('settings'),
+              onTap: (){
+                Navigator.push(context,
+                 MaterialPageRoute(builder: (context)=>Settings()));
+              },
             ),
             ListTile(
               leading: Icon(Icons.message),
               title: Text('Team Message'),
+              onTap: (){
+                Navigator.push(context,
+                  MaterialPageRoute(builder: (context)=>sms()));
+              },
             ),
              ListTile(
               leading: Icon(Icons.exit_to_app),
               title: Text('LOG OUT'),
+              onTap: null,
             )
             
           ],
