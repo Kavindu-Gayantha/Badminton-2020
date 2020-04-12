@@ -13,6 +13,7 @@ import 'package:badminton2020/UI/Tabs/TabStats/tabstats.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import './../drawer/settings.dart';
+import './../drawer/sms.dart';
 // import './../placeholder_widget.dart';
 
 
@@ -82,7 +83,7 @@ class _welcomescreenState extends State<welcomescreen> {
               title: Text('settings'),
               onTap: (){
                 Navigator.push(context,
-                 MaterialPageRoute(builder: (context)=>Settings()));
+                 MaterialPageRoute(builder: (context)=>settings()));
               },
             ),
             ListTile(

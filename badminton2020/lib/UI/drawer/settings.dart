@@ -11,9 +11,10 @@ class _settingsState extends State<settings> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Center(
+      child: Container(
         
-        Text('this is setttingss')
+        
+        child: Text('this is setttingss')
         
       ),
     );
