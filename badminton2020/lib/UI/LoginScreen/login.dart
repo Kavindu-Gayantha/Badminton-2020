@@ -2,13 +2,18 @@
 // import 'package:badminton2020/UI/Tabs/TabHome/tabhome.dart';
 import 'package:badminton2020/UI/Tabs/homepage.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 
 class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();
 }
-
+String _email, _password;
 class _LoginState extends State<Login> {
+  
+  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
+
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
  
@@ -21,6 +26,7 @@ class _LoginState extends State<Login> {
          
         ),
         body: Padding(
+          key: _formkey,
             padding: EdgeInsets.all(10),
             child: ListView(
               children: <Widget>[
@@ -43,7 +49,15 @@ class _LoginState extends State<Login> {
                     )),
                 Container(
                   padding: EdgeInsets.all(10),
-                  child: TextField(
+                  child: TextFormField(
+                    validator:(input){
+                      if(input.isEmpty){
+                        return 'please type something';
+                      }
+                      
+                    },
+                    onSaved:(input)=> _email = input,
+
                     controller: nameController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
@@ -54,7 +68,13 @@ class _LoginState extends State<Login> {
                 ),
                 Container(
                   padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-                  child: TextField(
+                  child: TextFormField(
+                    validator: (input){
+                      if(input.length<=6){
+                        return 'password should be having at least 6 characters';
+                      }
+                    },
+                    onSaved: (input)=> _password = input,
                     obscureText: true,
                     controller: passwordController,
                     decoration: InputDecoration(
@@ -144,4 +164,23 @@ class _LoginState extends State<Login> {
               ],
             )));
   } 
+}
+
+Future <void> signIn() async {
+  //todo validation
+  var _formkey;
+    final formState = _formkey.currentState;
+  if(formState.validate() ){
+    //todo login in firebase
+    formState.save();
+    try{
+          FirebaseUser user= await FirebaseAuth.instance.signInWithEmailAndPassword(email:_email,password:_password);
+    
+    }catch(e){
+      print(e.message);
+    }
+    // var firebaseAuth;
+    //     firebaseAuth.instance.signInWithEmailAndPassword(email:_email,password:_password);
+  }
+  //todo login in firebse
 }
