@@ -65,6 +65,9 @@ class _settingsState extends State<settings> {
                   RaisedButton(
                     onPressed: null,
                     child:Text('ADD'),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.elliptical(16,13))),
+                    color: Colors.green,
+                    elevation: 6,
                   )
                 ],
               ),
