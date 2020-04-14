@@ -1,5 +1,8 @@
 import 'dart:ui';
 
+import 'package:badminton2020/UI/Tabs/TabBoys/tabBoys.dart';
+import 'package:badminton2020/UI/Tabs/TabGirls/tabGirls.dart';
+import 'package:badminton2020/UI/Tabs/contactlist/modal/contact.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 // import './../appbar/appbar.dart';
@@ -15,7 +18,7 @@ class _settingsState extends State<settings> {
     return 
       Scaffold(
         appBar: AppBar(
-          title: Text('settings'),
+          title: Text('Manage Players'),
           backgroundColor:Colors.green.shade500,
           actions: <Widget>[
             
@@ -28,10 +31,63 @@ class _settingsState extends State<settings> {
 
           ],
         ),
-        body:Center(child: Text('this is body of cettings'),),
+        body:Padding(
+          padding:EdgeInsets.all(10) ,
+          child: ListView(
+            children: <Widget>[
+              // Container(
+              //   alignment: Alignment.center,
+              //   padding: EdgeInsets.all(10),
+              //   child: Text(
+              //     'ADMIN PANNEL',
+              //     style: TextStyle(
+              //       color: Colors.cyan,
+              //       fontWeight: FontWeight.w800,
+              //       fontSize: 15
+
+              //     ),
+
+              //   ),
+              // ),
+              Column(
+                children: <Widget>[
+                  Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.all(10),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Add new player',
+                      ),
+                    ),
+                  
+                  ),
+                  RaisedButton(
+                    onPressed: null,
+                    child:Text('ADD'),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.elliptical(16,13))),
+                    color: Colors.green,
+                    elevation: 6,
+                  )
+                ],
+              ),
+              Container(alignment: Alignment.center,
+              ),
+             
+            ],
+          ),
+
+          
+                  
+        ),
+                
+                
+      
+            
+          );
         
         
       
-    );
+   
   }
 }

@@ -39,7 +39,8 @@ class _LoginState extends State<Login> {
                           color: Colors.green.shade800,
                           fontWeight: FontWeight.w500,
                           fontSize: 30),
-                    )),
+                    )
+                ),
                 Container(
                     alignment: Alignment.center,
                     padding: EdgeInsets.all(10),
@@ -162,7 +163,9 @@ class _LoginState extends State<Login> {
                 ),
                 ),
               ],
-            )));
+            )
+            )
+            );
   } 
 }
 
