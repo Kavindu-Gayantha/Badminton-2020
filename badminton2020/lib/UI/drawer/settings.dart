@@ -68,6 +68,16 @@ class _settingsState extends State<settings> {
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.elliptical(16,13))),
                     color: Colors.green,
                     elevation: 6,
+                  ),
+                  RaisedButton(
+                    onPressed: (){
+                      Navigator.of(context).pop();
+
+                    },
+                    child: Text('Cancl',
+                    style: TextStyle(color: Colors.red),
+                    ),
+                    
                   )
                 ],
               ),
