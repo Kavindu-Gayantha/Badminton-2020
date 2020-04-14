@@ -19,7 +19,7 @@ class _settingsState extends State<settings> {
       Scaffold(
         appBar: AppBar(
           title: Text('Manage Players'),
-          backgroundColor:Colors.green.shade500,
+          backgroundColor:Colors.deepPurpleAccent,
           actions: <Widget>[
             
 
@@ -35,20 +35,20 @@ class _settingsState extends State<settings> {
           padding:EdgeInsets.all(10) ,
           child: ListView(
             children: <Widget>[
-              // Container(
-              //   alignment: Alignment.center,
-              //   padding: EdgeInsets.all(10),
-              //   child: Text(
-              //     'ADMIN PANNEL',
-              //     style: TextStyle(
-              //       color: Colors.cyan,
-              //       fontWeight: FontWeight.w800,
-              //       fontSize: 15
+              Container(
+                alignment: Alignment.center,
+                padding: EdgeInsets.all(10),
+                child: Text(
+                  'ADMIN PANEL',
+                  style: TextStyle(
+                    color: Colors.deepPurpleAccent,
+                    fontWeight: FontWeight.w800,
+                    fontSize: 35
 
-              //     ),
+                  ),
 
-              //   ),
-              // ),
+                ),
+              ),
               Column(
                 children: <Widget>[
                   Container(
