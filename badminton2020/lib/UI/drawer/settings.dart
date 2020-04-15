@@ -6,6 +6,7 @@ import 'package:badminton2020/UI/Tabs/contactlist/modal/contact.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 // import './../appbar/appbar.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
 
 class settings extends StatefulWidget {
   @override
@@ -63,7 +64,9 @@ class _settingsState extends State<settings> {
                   
                   ),
                   RaisedButton(
-                    onPressed: null,
+                    onPressed: (){
+                      createRecord();
+                    },
                     child:Text('ADD'),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.elliptical(16,13))),
                     color: Colors.green,
@@ -100,4 +103,12 @@ class _settingsState extends State<settings> {
       
    
   }
+}
+final databaseReference = Firestore.instance;
+void createRecord() async{
+  await databaseReference.collection("players")
+    .document("1")
+    .setData({
+
+    });
 }
