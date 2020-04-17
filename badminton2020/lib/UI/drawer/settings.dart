@@ -65,7 +65,7 @@ class _settingsState extends State<settings> {
                   ),
                   RaisedButton(
                     onPressed: (){
-                      createRecord();
+                      // createRecord();
                     },
                     child:Text('ADD'),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.elliptical(16,13))),
@@ -104,11 +104,11 @@ class _settingsState extends State<settings> {
    
   }
 }
-final databaseReference = Firestore.instance;
-void createRecord() async{
-  await databaseReference.collection("players")
-    .document("1")
-    .setData({
+// final databaseReference = Firestore.instance;
+// void createRecord() async{
+//   await databaseReference.collection("players")
+//     .document("1")
+//     .setData({
 
-    });
-}
+//     });
+// }
