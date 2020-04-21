@@ -4,8 +4,10 @@ import 'package:badminton2020/UI/Tabs/homepage.dart';
 import 'package:flutter/material.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:firebase_database/firebase_database.dart';
-final FirebaseDatabase database = FirebaseDatabase.instance;
+import 'package:firebase_database/firebase_database.dart';
+
+final FirebaseDatabase database = FirebaseDatabase.instance; 
+
 
 
 class Login extends StatefulWidget {
