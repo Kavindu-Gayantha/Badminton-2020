@@ -4,7 +4,8 @@ import 'package:badminton2020/UI/Tabs/homepage.dart';
 import 'package:flutter/material.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:cloud_firestore/cloud_firestore.dart';
-
+// import 'package:firebase_database/firebase_database.dart';
+final FirebaseDatabase database = FirebaseDatabase.instance;
 
 
 class Login extends StatefulWidget {
@@ -106,10 +107,13 @@ class _LoginState extends State<Login> {
                       onPressed: () {
                         print(nameController.text);
                         print(passwordController.text);
-                        Navigator.push(
+                        if(_email.contains("@")){
+                          Navigator.push(
                           context, MaterialPageRoute(
                             builder: (context)=> welcomescreen()),
                             );
+                        }else SnackBar(content: Text('Yay! A SnackBar!'));
+                        
                       },
                     )
                     ),
