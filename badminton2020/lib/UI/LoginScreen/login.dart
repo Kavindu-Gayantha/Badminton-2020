@@ -131,6 +131,10 @@ class _LoginState extends State<Login> {
                         ),
                         onPressed: () {
                           //signup screen
+                          database.reference().child("message").once().then((DataSnapshot snapshot){
+                              print("value of db is \n : ${snapshot.value}");
+                              
+                          });
                         },
                       )
                     ],
