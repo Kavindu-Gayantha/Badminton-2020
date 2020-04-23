@@ -52,7 +52,8 @@ class _LoginState extends State<Login> {
                     child: Text(
                       'Sign in captains',
                       style: TextStyle(fontSize: 20),
-                    )),
+                    )
+                    ),
                 Container(
                   padding: EdgeInsets.all(10),
                   child: TextFormField(

@@ -14,22 +14,27 @@ class MyApp extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: <Widget>[
-          Center(
+          Opacity(
+            
+          child: Center(
             child: new Image.asset(
               'assets/images/welcomescreen.jpg',
               width:size.width,
               height:size.height,
               fit:BoxFit.fill,
             ),
+          ), opacity: 0.8,
           ),
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Center(
               child: Text("WELCOME UOK BADMINTON",
+              textAlign: TextAlign.center,
                 style: TextStyle(
+                  fontSize: 50.0,
+                  fontFamily: 'bold',
                   fontWeight: FontWeight.bold,
-                  fontSize: 26.0,
-                  color: Colors.white
+                  color: Color.fromRGBO(1, 250, 83,1),
                 ),
                 ),
             ),
@@ -44,7 +49,13 @@ class MyApp extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Center(
                   child: RaisedButton(
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.elliptical(16.0,13.0))),
+                    elevation: 5,
+                    textColor: Colors.black,
+                    textTheme: ButtonTextTheme.primary,
                     
+                    color: Colors.green,
+                      
                     onPressed:(){
                       Navigator.push(context,
                       MaterialPageRoute(builder: (context)=> welcomescreen()));
@@ -55,6 +66,11 @@ class MyApp extends StatelessWidget {
               ),
               Center(
                 child: RaisedButton(
+                  // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.elliptical(16.0,13.0))),
+                   elevation: 5,
+                   textColor: Colors.white,
+                   color: Colors.red,
                   onPressed: (){
                     //close
                   },

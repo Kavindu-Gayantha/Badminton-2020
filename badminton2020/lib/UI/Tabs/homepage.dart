@@ -50,7 +50,7 @@ class _welcomescreenState extends State<welcomescreen> {
               decoration: BoxDecoration(
                 color: Colors.greenAccent,
                 image: DecorationImage(
-                  image: AssetImage("images/feather-shuttle.jpg"),
+                  image: AssetImage("assets/images/feather-shuttle.jpg"),
                   fit: BoxFit.cover
                 )
                 
