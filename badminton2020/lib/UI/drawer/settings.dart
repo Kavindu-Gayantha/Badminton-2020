@@ -7,6 +7,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 
+import 'model/modal.dart';
+
 // import './../appbar/appbar.dart';
 // import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -18,101 +20,122 @@ class settings extends StatefulWidget {
 }
 
 class _settingsState extends State<settings> {
+
+  List<Board> boardMessage = List();
+  Board board;
+  final FirebaseDatabase database = FirebaseDatabase.instance;
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  DatabaseReference databaseReference;
   @override
-  Widget build(BuildContext context) {
-    return 
-      Scaffold(
-        appBar: AppBar(
-          title: Text('Manage Players'),
-          backgroundColor:Colors.deepPurpleAccent,
-          actions: <Widget>[
-            
-
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Icon(Icons.save),
-            ),
-            
-
-          ],
-        ),
-        body:Padding(
-          padding:EdgeInsets.all(10) ,
-          child: ListView(
-            children: <Widget>[
-              Container(
-                alignment: Alignment.center,
-                padding: EdgeInsets.all(10),
-                child: Text(
-                  'ADMIN PANEL',
-                  style: TextStyle(
-                    color: Colors.deepPurpleAccent,
-                    fontWeight: FontWeight.w800,
-                    fontSize: 35
-
-                  ),
-
+  void initState(){
+    super.initState();
+    board = new Board("", "");
+    databaseReference = database.reference().child("community_board");
+    databaseReference.onChildAdded.listen(_onEntryAdded);
+         
+      }
+    
+      @override
+      Widget build(BuildContext context) {
+        return 
+          Scaffold(
+            appBar: AppBar(
+              title: Text('Manage Players'),
+              backgroundColor:Colors.deepPurpleAccent,
+              actions: <Widget>[
+                
+    
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Icon(Icons.save),
                 ),
-              ),
-              Column(
+                
+    
+              ],
+            ),
+            body:Padding(
+              padding:EdgeInsets.all(10) ,
+              child: ListView(
                 children: <Widget>[
                   Container(
                     alignment: Alignment.center,
                     padding: EdgeInsets.all(10),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Add new player',
+                    child: Text(
+                      'ADMIN PANEL',
+                      style: TextStyle(
+                        color: Colors.deepPurpleAccent,
+                        fontWeight: FontWeight.w800,
+                        fontSize: 35
+    
                       ),
+    
                     ),
-                  
                   ),
-                  RaisedButton(
-                    onPressed: (){
-                      // createRecord();
-                      database.reference().child("message").set({
-                        "firstname":"kavi",
-                        "posission":"vice captain"
-                      });
-                    
-                                          },
-                                          child:Text('ADD'),
-                                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.elliptical(16,13))),
-                                          color: Colors.green,
-                                          elevation: 6,
-                                        ),
-                                        RaisedButton(
-                                          onPressed: (){
-                                            Navigator.of(context).pop();
+                  Column(
+                    children: <Widget>[
+                      Container(
+                        alignment: Alignment.center,
+                        padding: EdgeInsets.all(10),
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            labelText: 'Add new player',
+                          ),
+                        ),
                       
-                                          },
-                                          child: Text('Cancle',
-                                          style: TextStyle(color: Colors.red),
-                                          ),
-                                          
-                                        )
+                      ),
+                      RaisedButton(
+                        onPressed: (){
+                          // createRecord();
+                          database.reference().child("message").set({
+                            "firstname":"kavi",
+                            "posission":"vice captain"
+                          });
+                        
+                                              },
+                                              child:Text('ADD'),
+                                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.elliptical(16,13))),
+                                              color: Colors.green,
+                                              elevation: 6,
+                                            ),
+                                            RaisedButton(
+                                              onPressed: (){
+                                                Navigator.of(context).pop();
+                          
+                                              },
+                                              child: Text('Cancle',
+                                              style: TextStyle(color: Colors.red),
+                                              ),
+                                              
+                                            )
+                                          ],
+                                        ),
+                                        Container(alignment: Alignment.center,
+                                        ),
+                                       
                                       ],
                                     ),
-                                    Container(alignment: Alignment.center,
-                                    ),
-                                   
-                                  ],
-                                ),
-                      
+                          
+                                    
+                                            
+                                  ),
+                                          
+                                          
                                 
-                                        
-                              ),
                                       
-                                      
-                            
+                                    );
                                   
-                                );
-                              
-                              
-                            
-                         
-                        }
-                      }
+                                  
+                                
+                             
+                            }
+                          
+      void _onEntryAdded(Event event) {
+         setState(() {
+           boardMessage.add(Board.fromSnapshot(event.snapshot));
+         });
+  }
+}
                       
                       void createRecord() {
                         database.reference().child("players").set({
