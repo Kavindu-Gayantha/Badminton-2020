@@ -41,7 +41,7 @@ class _settingsState extends State<settings> {
           Scaffold(
             appBar: AppBar(
               title: Text('Manage Players'),
-              backgroundColor:Colors.deepPurpleAccent,
+              backgroundColor:Colors.green.shade900,
               actions: <Widget>[
                 
     
@@ -49,92 +49,139 @@ class _settingsState extends State<settings> {
                   padding: const EdgeInsets.all(8.0),
                   child: Icon(Icons.save),
                 ),
-                
+                  
     
               ],
             ),
-            body:Padding(
-              padding:EdgeInsets.all(10) ,
-              child: ListView(
-                children: <Widget>[
-                  Container(
-                    alignment: Alignment.center,
-                    padding: EdgeInsets.all(10),
-                    child: Text(
-                      'ADMIN PANEL',
-                      style: TextStyle(
-                        color: Colors.deepPurpleAccent,
-                        fontWeight: FontWeight.w800,
-                        fontSize: 35
-    
-                      ),
-    
-                    ),
-                  ),
-                  Column(
-                    children: <Widget>[
-                      Container(
-                        alignment: Alignment.center,
-                        padding: EdgeInsets.all(10),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: 'Add new player',
+            body: Column(
+              children: <Widget>[
+                Flexible(
+                  flex: 0,
+                  child: Form(
+                    key: formKey,
+                    child: Flex(
+                      direction: Axis.vertical,
+                      children: <Widget>[
+                        ListTile(
+                          leading: Icon(Icons.person),
+                          title: TextFormField(
+                            initialValue: "",
+                            onSaved: (val)=>board.subject=val,
+                            validator: (val)=>val==""? val:null,
                           ),
                         ),
-                      
-                      ),
-                      RaisedButton(
-                        onPressed: (){
-                          // createRecord();
-                          database.reference().child("message").set({
-                            "firstname":"kavi",
-                            "posission":"vice captain"
-                          });
-                        
-                                              },
-                                              child:Text('ADD'),
-                                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.elliptical(16,13))),
-                                              color: Colors.green,
-                                              elevation: 6,
-                                            ),
-                                            RaisedButton(
-                                              onPressed: (){
-                                                Navigator.of(context).pop();
-                          
-                                              },
-                                              child: Text('Cancle',
-                                              style: TextStyle(color: Colors.red),
+                        RaisedButton(
+                          color: Colors.green,
+                          child: Text("ADD PLAYER"),
+                          onPressed:(){
+                            handleSubmit();
+                                                      } ,
+                                                    )
+                            
+                                                  ],
+                                                  
+                                                
+                                                ),
                                               ),
-                                              
                                             )
                                           ],
                                         ),
-                                        Container(alignment: Alignment.center,
-                                        ),
-                                       
-                                      ],
-                                    ),
-                          
-                                    
-                                            
-                                  ),
-                                          
-                                          
+                                      );
+                                  }
+                                        // body:Padding(
+                                        //   padding:EdgeInsets.all(10) ,
+                                        //   child: ListView(
+                                        //     children: <Widget>[
+                                        //       Container(
+                                        //         alignment: Alignment.center,
+                                        //         padding: EdgeInsets.all(10),
+                                        //         child: Text(
+                                        //           'ADMIN PANEL',
+                                        //           style: TextStyle(
+                                        //             color: Colors.deepPurpleAccent,
+                                        //             fontWeight: FontWeight.w800,
+                                        //             fontSize: 35
                                 
-                                      
-                                    );
-                                  
-                                  
+                                        //           ),
                                 
-                             
-                            }
-                          
-      void _onEntryAdded(Event event) {
-         setState(() {
-           boardMessage.add(Board.fromSnapshot(event.snapshot));
-         });
-  }
+                                        //         ),
+                                        //       ),
+                                        //       Column(
+                                        //         children: <Widget>[
+                                        //           Container(
+                                        //             alignment: Alignment.center,
+                                        //             padding: EdgeInsets.all(10),
+                                        //             child: TextFormField(
+                                        //               decoration: InputDecoration(
+                                        //                 border: OutlineInputBorder(),
+                                        //                 labelText: 'Add new player',
+                                        //               ),
+                                        //             ),
+                                                  
+                                        //           ),
+                                        //           RaisedButton(
+                                        //             onPressed: (){
+                                        //               // createRecord();
+                                        //               database.reference().child("message").set({
+                                        //                 "firstname":"kavi",
+                                        //                 "posission":"vice captain"
+                                        //               });
+                                                    
+                                        //                                   },
+                                        //                                   child:Text('ADD'),
+                                        //                                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.elliptical(16,13))),
+                                        //                                   color: Colors.green,
+                                        //                                   elevation: 6,
+                                        //                                 ),
+                                        //                                 RaisedButton(
+                                        //                                   onPressed: (){
+                                        //                                     Navigator.of(context).pop();
+                                                      
+                                        //                                   },
+                                        //                                   child: Text('Cancle',
+                                        //                                   style: TextStyle(color: Colors.red),
+                                        //                                   ),
+                                                                          
+                                        //                                 )
+                                        //                               ],
+                                        //                             ),
+                                        //                             Container(alignment: Alignment.center,
+                                        //                             ),
+                                                                   
+                                        //                           ],
+                                        //                         ),
+                                                      
+                                                                
+                                                                        
+                                        //                       ),
+                                                                      
+                                                                      
+                                                            
+                                                                  
+                                                             
+                                                              
+                                                              
+                                                            
+                                                         
+                                                        
+                                                      
+                                  void _onEntryAdded(Event event) {
+                                     setState(() {
+                                       boardMessage.add(Board.fromSnapshot(event.snapshot));
+                                     });
+                              }
+                            
+                              void handleSubmit() {
+                               final FormState form = formKey.currentState;
+                               if(form.validate()){
+                                 form.save();
+                                 form.reset();
+
+                                 //save form data to database
+                                 databaseReference.push().set(board.toJson());
+                               } 
+                               
+                              }
 }
                       
                       void createRecord() {
