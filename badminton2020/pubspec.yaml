@@ -23,6 +23,7 @@ dependencies:
   firebase_auth: ^0.16.0
   firebase_core: ^0.4.4+3
   firebase_database: ^3.1.3
+  amazing_button: ^0.0.3+4
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -53,6 +54,7 @@ flutter:
    - assets/images/welcomescreen.jpg
    - assets/images/feather-shuttle.jpg
    - assets/images/badminton.jpg
+
   #  - images/welcomescreen.jpg
   #  - images/a_dot_ham.jpeg
 

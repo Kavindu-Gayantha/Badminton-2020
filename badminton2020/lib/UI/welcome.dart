@@ -6,6 +6,7 @@
 import 'package:badminton2020/UI/Tabs/homepage.dart';
 import 'package:flutter/material.dart';
 
+import 'package:amazing_button/amazing_button.dart';
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -48,33 +49,35 @@ class MyApp extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Center(
-                  child: RaisedButton(
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.elliptical(16.0,13.0))),
+                  child: AmazingButton.success(
+                    // shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.elliptical(16.0,13.0))),
                     elevation: 5,
-                    textColor: Colors.black,
-                    textTheme: ButtonTextTheme.primary,
+                    // color: Colors.black,
+                    // textTheme: ButtonTextTheme.primary,
                     
-                    color: Colors.green,
+                    // color: Colors.green,
+                    text: 'GO TO APP',
                       
                     onPressed:(){
                       Navigator.push(context,
                       MaterialPageRoute(builder: (context)=> welcomescreen()));
                     } ,
-                    child: Text('go to APP'),
+                    // child: Text('go to APP'),
                   ),
                 ),
               ),
               Center(
-                child: RaisedButton(
+                child: AmazingButton.danger(
                   // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.elliptical(16.0,13.0))),
+                  //  shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.elliptical(16.0,13.0))),
                    elevation: 5,
-                   textColor: Colors.white,
-                   color: Colors.red,
+                  //  color: Colors.white,
+                  text: 'Close APP',
+                   
                   onPressed: (){
                     //close
                   },
-                  child: Text('close app'),
+                  // child: Text('close app'),
                 ),
               )
             ],
