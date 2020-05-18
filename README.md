@@ -6,4 +6,6 @@ attendance marking app with flutter
   * delete player
   * edit profile 
     * add admin
+* normal users can see their team stats. Attendance percentage like that
+
  
