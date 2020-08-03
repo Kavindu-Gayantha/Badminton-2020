@@ -8,5 +8,4 @@ attendance marking app with flutter
     * add admin
 * normal users can see their team stats. Attendance percentage like that
 * push notification sends to all team members
-
  
