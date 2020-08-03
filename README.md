@@ -6,7 +6,5 @@ attendance marking app with flutter
   * delete player
   * edit profile 
     * add admin
-
-    kk
     
  
