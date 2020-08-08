@@ -39,10 +39,13 @@ class _LoginState extends State<Login> {
                     alignment: Alignment.center,
                     padding: EdgeInsets.all(10),
                     child: Text(
+                      
                       'Team Badminton UOK',
+                      textAlign: TextAlign.center,
                       style: TextStyle(
                           color: Colors.green.shade800,
                           fontWeight: FontWeight.w500,
+                          
                           fontSize: 30),
                     )
                 ),
@@ -121,13 +124,14 @@ class _LoginState extends State<Login> {
                     )
                     ),
                 Container(
+                  
                   child: Row(
                     children: <Widget>[
-                      Text('Does not have account?'),
+                      Text('Does not have account?',textAlign: TextAlign.center,),
                       FlatButton(
                         textColor: Colors.green.shade700,
                         child: Text(
-                          'Create Account',
+                          'Create Account',textAlign: TextAlign.center,
                           style: TextStyle(fontSize: 20),
                         ),
                         onPressed: () {
@@ -160,7 +164,8 @@ class _LoginState extends State<Login> {
                           style: TextStyle(fontSize: 20),
                         ),
                         color: Colors.green,
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(56.0))),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(56.0))),
                         elevation: 10,
                         onPressed: () {
                           //signup screen
