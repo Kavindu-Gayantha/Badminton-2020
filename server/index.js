@@ -82,26 +82,55 @@
 
 const express = require("express");
 const app = express();
-//get request
-app.get("/get",(req,res)=>{
-    return res.json("hello get");
-});
+app.use(express.json({extended:true}));
+//post with router
+// const postRequest = require("./routes/post/postWithParams");
+// app.use(postRequest);
 
-//post request
-app.post("/post",(req,res)=>{
-    return res.json("hello post");
-})
+//post with router & body
+const postWithBody = require("./routes/post/postWithBody");
+app.use(postWithBody);
 
-//delete request
-app.delete("/delete/:playerName",(req,res)=>{
-    const player_name = req.params.playerName;
-    return res.json(`hello delete playername ${player_name}`);
-})
+//get with params
+const getWithPramasRequest = require("./routes/get/getWithParams");
+app.use(getWithPramasRequest);
 
-//put request
-app.put("/put",(req,res)=>{
-    return res.json("hello this is put");
-})
+//get request without parameters
+const getRequest = require("./routes/get/getRequest");
+app.use(getRequest); 
+
+//put request with paramters
+const putRequest = require("./routes/put/putWithParams");
+app.use(putRequest);
+
+//delete request with paremeters
+const deleteRequest = require("./routes/delete/deleteWithParams");
+app.use(deleteRequest);
+
+//get with router
+// const getRequest = require("./routes/get/getRequest");
+// app.use(getRequest);
+
+// //get request
+// app.get("/get",(req,res)=>{
+//     return res.json("hello get");
+// });
+
+// //post request
+// app.post("/post",(req,res)=>{
+//     return res.json("hello post");
+// });
+
+// //delete request
+// app.delete("/delete/:playerName",(req,res)=>{
+//     const player_name = req.params.playerName;
+//     return res.json(`hello delete playername ${player_name}`);
+// })
+
+// //put request
+// app.put("/put",(req,res)=>{
+//     return res.json("hello this is put");
+// })
 
 
 
@@ -110,6 +139,8 @@ app.put("/put",(req,res)=>{
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT,()=>{
-    console.log(`server is on port ${PORT}`);
+    console.log("server is on port" + PORT);
+    // or we can use with ` 
+    // console.log('server is on port ${PORT}');
     
 });

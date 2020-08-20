@@ -4,10 +4,12 @@
 // import 'package:badminton2020/UI/Tabs/TabGirls/tabGirls.dart';
 // import 'package:badminton2020/UI/Tabs/contactlist/contact_list.dart';
 // import 'package:badminton2020/UI/Tabs/contactlist/modal/contact.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
+
 
 import 'model/modal.dart';
 
@@ -41,20 +43,26 @@ class _settingsState extends State<settings> {
       @override
       Widget build(BuildContext context) {
         var firebaseAnimatedList = FirebaseAnimatedList;
+        return StreamBuilder<QuerySnapShot>(
+          stream: Firestore.instance.collection('baby').snapshots(),
+          builder: (context, snapshot) {
+            if(!snapshot.hasData) return LinearProgressIndicator();
+
+            return 
+          },
+        );
                 return 
                   Scaffold(
                     appBar: AppBar(
                       title: Text('Manage Players'),
                       backgroundColor:Colors.green.shade900,
                       actions: <Widget>[
-                        
-            
+                              
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Icon(Icons.save),
                         ),
-                          
-            
+                           
                       ],
                     ),
                     body: Column(

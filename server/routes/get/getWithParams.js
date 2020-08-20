@@ -5,4 +5,6 @@ const router = Router();
 router.get("/get/:parameter",(req,res)=>{
     const postParams = req.params.parameter;
     return res.json(postParams);
-})
+});
+
+module.exports = router;
